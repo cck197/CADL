@@ -1,0 +1,9 @@
+decorator==4.0.6
+Django==1.10.1
+ipython==2.4.1
+pexpect==4.0.1
+powerline-status==2.5
+ptyprocess==0.5
+pycurl==7.43.0
+python-apt==1.1.0b1
+simplegeneric==0.8.1
