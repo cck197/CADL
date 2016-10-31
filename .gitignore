@@ -5,3 +5,8 @@ staticfiles
 db.sqlite3
 *.swp
 *.swo
+*.gz
+img_align_celeba
+gtzan_music_speech
+cifar10
+.ipynb_checkpoints
