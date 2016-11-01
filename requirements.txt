@@ -21,7 +21,6 @@ numpy==1.11.2
 pexpect==4.2.1
 pickleshare==0.7.4
 Pillow==3.4.2
-pkg-resources==0.0.0
 prompt-toolkit==1.0.8
 protobuf==3.0.0b2
 ptyprocess==0.5.1
@@ -35,10 +34,10 @@ scikit-learn==0.18
 scipy==0.18.1
 simplegeneric==0.8.1
 six==1.10.0
-tensorflow==0.9.0
 terminado==0.6
 toolz==0.8.0
 tornado==4.4.2
 traitlets==4.3.1
 wcwidth==0.1.7
 widgetsnbextension==1.2.6
+https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow-0.11.0rc1-cp35-cp35m-linux_x86_64.whl
