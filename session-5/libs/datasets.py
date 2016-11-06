@@ -5,6 +5,8 @@ Copyright Parag K. Mital, June 2016.
 import tensorflow.examples.tutorials.mnist.input_data as input_data
 from .dataset_utils import *
 
+from zipfile import Zipfile
+
 
 def MNIST(one_hot=True, split=[1.0, 0.0, 0.0]):
     """Returns the MNIST dataset.
@@ -69,13 +71,17 @@ def CELEB(path='./img_align_celeba/'):
               'link located here (imgs/img_align_celeba.zip [1.34 GB]): ' +
               'http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html')
         return None
-    else:
-        fs = [os.path.join(path, f)
-              for f in os.listdir(path) if f.endswith('.jpg')]
-        if len(fs) < 202598:
-            print('It does not look like you have downloaded the entire ' +
-                  'Celeb Dataset.\n' +
-                  'Try downloading the dataset from the "Aligned and Cropped" ' +
-                  'link located here (imgs/img_align_celeba.zip [1.34 GB]): ' +
-                  'http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html')
-        return fs
+	url = 'https://www.dropbox.com/s/fhso6fu6yrzozww/img_align_celeba.zip?dl=0'
+	f = 'img_align_celeba.zip'
+        urllib.request.urlretrieve(url, f)
+	zf = Zipfile(f)
+	zf.extract_all()
+    fs = [os.path.join(path, f)
+	  for f in os.listdir(path) if f.endswith('.jpg')]
+    if len(fs) < 202598:
+	print('It does not look like you have downloaded the entire ' +
+	      'Celeb Dataset.\n' +
+	      'Try downloading the dataset from the "Aligned and Cropped" ' +
+	      'link located here (imgs/img_align_celeba.zip [1.34 GB]): ' +
+	      'http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html')
+    return fs
